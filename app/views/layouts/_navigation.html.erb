@@ -1,4 +1,6 @@
 <p>
+  <%= link_to 'Alpha Blog', root_path %>
+
   <% if logged_in? %>
     <%= link_to current_user.username, user_path(current_user) %>
     <%= link_to 'Log out', logout_path, method: :delete %>
