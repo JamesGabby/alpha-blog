@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  # Allows you to use these methods in the Views
   helper_method :current_user, :logged_in?
 
   def current_user
