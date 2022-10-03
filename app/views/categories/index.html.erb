@@ -1,1 +1,7 @@
 <h1>Categories List</h1>
+
+<div class="flickr_pagination">
+  <%= will_paginate @categories, :container => false %>
+</div>
+
+<%= render 'category' %>
