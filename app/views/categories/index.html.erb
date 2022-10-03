@@ -4,4 +4,25 @@
   <%= will_paginate @categories, :container => false %>
 </div>
 
-<%= render 'category' %>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Created</th>
+      <th>Edited</th>
+      <th>Articles</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @categories.each do |category| %>
+      <tr>
+        <td><%= link_to category.name, category_path(category) %></td>
+        <td><small>Created <%= time_ago_in_words(category.created_at) %> ago</small></td>
+        <td><small>Edited <%= time_ago_in_words(category.updated_at) %> ago</small></td>
+        <td><%= pluralize(category.articles.count, "article") %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
