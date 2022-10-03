@@ -2,6 +2,10 @@
 
 <small>By <%= @article.user.username %></small>
 <span><%= link_to gravatar_for(@article.user, size: 20), user_path(@article.user) %>
+<span>
+<% if @article.categories.any? %>
+  <%= render @article.categories %>
+<% end %>
 
 <p>Title: <%= @article.title %></p>
 <p>Description: <%= @article.description %></p>
